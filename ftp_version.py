@@ -4,7 +4,7 @@ html = str(
            requests.get('https://github.com/restic/restic/releases/latest')
            .content)
 index = html.find('Release ')
-github_version = html[i:i+20].split()[2]
+github_version = html[index:index+20].split()[2]
 file = open('github_version.txt', 'w')
 file.writelines(github_version)
 file.close()
@@ -15,7 +15,7 @@ html = str(
                         'https://oplab9.parqtec.unicamp.br/pub/test/marcelo/restic/latest'
                         ).content)
 index = html.find('restic-')
-ftp_version = html[i:i+20].split('-')[1].split('"')[0]
+ftp_version = html[index:index+20].split('-')[1].split('"')[0]
 file = open('ftp_version.txt', 'w')
 file.writelines(ftp_version)
 file.close()
