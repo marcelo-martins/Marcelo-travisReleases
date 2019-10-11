@@ -4,7 +4,7 @@ language: go
 install:   
   - sudo apt-get update
   - sudo apt-get install -y lftp
-  - python3 ftp_version.py
 
 script:
+  - python3 ftp_version.py
   - bash build.sh
