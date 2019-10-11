@@ -3,10 +3,10 @@ import requests
 html = str(
            requests.get('https://github.com/restic/restic/releases/latest')
            .content)
-index = html.find('Release')
-print(html)
-print(str(index))
-github_version = html[index:index+20].split()[2]
+index = html.find('Release ')
+github_version = html[index + 15:index + 20]
+print("Latest: ", github_version)
+
 file = open('github_version.txt', 'w')
 file.writelines(github_version)
 file.close()
@@ -16,8 +16,8 @@ html = str(
              requests.get(
                         'https://oplab9.parqtec.unicamp.br/pub/test/marcelo/restic/latest'
                         ).content)
-index = html.find('restic-')
-ftp_version = html[index:index+20].split('-')[1].split('"')[0]
+index = html.rfind('restic-')
+ftp_version = html[index + 7:index + 12]
 file = open('ftp_version.txt', 'w')
 file.writelines(ftp_version)
 file.close()
