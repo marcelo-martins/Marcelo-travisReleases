@@ -1,6 +1,6 @@
 github_version=$(cat github_version.txt)
 ftp_version=$(cat ftp_version.txt)
-status=$(curl -s --head -w %{http_code} https://oplab9.parqtec.unicamp.br/pub/test/marcelo/restic/latest-$github_versions -o /dev/null)
+status=$(curl -s --head -w %{http_code} https://oplab9.parqtec.unicamp.br/pub/test/marcelo/restic/latest/restic-$github_versions -o /dev/null)
 
 if [ $status == 404 ] 
 then

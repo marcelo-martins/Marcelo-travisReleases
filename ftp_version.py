@@ -3,7 +3,7 @@ import requests
 html = str(
            requests.get('https://github.com/restic/restic/releases/latest')
            .content)
-index = html.find('Release ')
+index = html.find('Release')
 github_version = html[index:index+20].split()[2]
 file = open('github_version.txt', 'w')
 file.writelines(github_version)
