@@ -1,0 +1,10 @@
+os: linux-ppc64le
+language: go
+
+install:   
+  - sudo apt-get update
+  - sudo apt-get install -y lftp
+  - python3 ftp_version.py
+
+script:
+  - bash build.sh
