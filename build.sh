@@ -9,13 +9,13 @@ then
     cd restic
     
     echo "BUILDING"
-    - go build ./cmd/restic
+    go run build.go -T
     
     echo "RESTIC VERSION"
     - ./restic version
     
-    echo "TESTING"
-    - go test ./...
+    #echo "TESTING"
+    #- go test ./...
     
     echo "MOVING BINARY"
     lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /test/marcelo/restic/latest restic-$github_version"
