@@ -1,7 +1,7 @@
 os: linux-ppc64le
 language: go
 
-install:   
+before_install:   
   - sudo apt-get update
   - sudo apt-get install -y lftp
 
