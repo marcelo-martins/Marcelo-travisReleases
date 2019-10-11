@@ -5,7 +5,7 @@ html = str(
            .content)
 index = html.find('Release')
 print(html)
-print(str(i))
+print(str(index))
 github_version = html[index:index+20].split()[2]
 file = open('github_version.txt', 'w')
 file.writelines(github_version)
