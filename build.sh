@@ -11,9 +11,6 @@ then
     echo "BUILDING"
     go run build.go -T
     
-    echo "RESTIC VERSION"
-    - ./restic version
-    
     echo "MOVING BINARY"
     mv restic restic-$github_version
     lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; rm /test/marcelo/restic/latest/restic-$ftp_version" 

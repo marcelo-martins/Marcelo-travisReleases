@@ -4,8 +4,7 @@ html = str(
            requests.get('https://github.com/restic/restic/releases/latest')
            .content)
 index = html.find('Release ')
-print(str(html))
-github_version = html[index + 8:index + 15]
+github_version = html[i:i+20].split()[2]
 file = open('github_version.txt', 'w')
 file.writelines(github_version)
 file.close()
@@ -15,21 +14,8 @@ html = str(
              requests.get(
                         'https://oplab9.parqtec.unicamp.br/pub/test/marcelo/restic/latest'
                         ).content)
-index = html.rfind('version-')
-ftp_version = html[index + 8:index + 15]
+index = html.find('restic-')
+ftp_version = html[i:i+20].split('-')[1].split('"')[0]
 file = open('ftp_version.txt', 'w')
 file.writelines(ftp_version)
-file.close()
-
-# find and save the oldest Bazel version on FTP server
-index = html.find('version-')
-delete = html[index + 8:index + 15]
-file = open('delete_version.txt', 'w')
-file.writelines(delete)
-file.close()
-
-# find and save the oldest Bazel version on FTP server
-index = html.find('ddddw')
-file = open('create_dir.txt', 'w')
-file.writelines(str(index))
 file.close()
