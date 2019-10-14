@@ -8,7 +8,7 @@ addr="ftp://oplab9.parqtec.unicamp.br"
 path="test/marcelo/restic/latest/"
 
    
-if [ [$github_version != $ftp_version] ] #talvez um ponto e virgula aqui
+if [ [$status==404] ] #talvez um ponto e virgula aqui
 then
     echo "CLONING"
     git clone https://github.com/restic/restic/
