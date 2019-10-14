@@ -12,13 +12,14 @@ then
     
     echo "BUILDING"
     go run build.go -T
+    mv restic restic-$github_version
     
     echo "MOVING BINARY"
     if [[ $github_version > $ftp_version ]]
     then
-        lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O pub/test/marcelo/restic/latest restic-$github_version"
-        lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; rm pub/test/marcelo/restic/latest/restic-$ftp_version"
+        lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /test/marcelo/restic/latest restic-$github_version"
+        lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; rm /test/marcelo/restic/latest/restic-$ftp_version"
     fi
-    lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O pub/test/marcelo/restic restic-$github_version"
-    lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; rm pub/test/marcelo/restic/restic-$del_version"
+    lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /test/marcelo/restic restic-$github_version"
+    lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; rm /test/marcelo/restic/restic-$del_version"
 fi
