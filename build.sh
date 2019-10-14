@@ -7,10 +7,7 @@ status=$(curl -s --head -w %{http_code} https://oplab9.parqtec.unicamp.br/pub/te
 addr="ftp://oplab9.parqtec.unicamp.br"
 path="test/marcelo/restic/latest/"
 
-    echo "Git version $github_version"
-    echo "FTP version $ftp_version"
-
-
+   
 if [ [$github_version != $ftp_version] ] #talvez um ponto e virgula aqui
 then
     echo "CLONING"
