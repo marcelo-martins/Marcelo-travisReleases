@@ -11,7 +11,7 @@ path="test/marcelo/restic/latest/"
     echo "FTP version $ftp_version"
 
 
-if [ $github_version != $ftp_version ]; #talvez um ponto e virgula aqui
+if [ [$github_version != $ftp_version] ] #talvez um ponto e virgula aqui
 then
     echo "CLONING"
     git clone https://github.com/restic/restic/
