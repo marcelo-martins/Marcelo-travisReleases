@@ -20,10 +20,3 @@ ftp_version = html[index + 7:index + 12]
 file = open('ftp_version.txt', 'w')
 file.writelines(ftp_version)
 file.close()
-
-#delete
-index = html.find('restic-')
-delete = html[index + 7:index + 12]
-file = open('delete_version.txt', 'w')
-file.writelines(delete)
-file.close()
