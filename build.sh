@@ -16,7 +16,7 @@ then
     
     echo "BUILDING"
     go run build.go -T
-    mv restic restic-$github_version
+    #mv restic restic-$github_version
     
     # echo "MOVING BINARY"
     # if [[ $github_version > $ftp_version ]]
