@@ -1,11 +1,10 @@
-  
 github_version=$(cat github_version.txt)
 ftp_version=$(cat ftp_version.txt)
 del_version=$(cat delete_version.txt)
 status=$(curl -s --head -w %{http_code} https://oplab9.parqtec.unicamp.br/pub/test/marcelo/restic/latest/restic-$github_version -o /dev/null)
 
 addr="ftp://oplab9.parqtec.unicamp.br"
-path="test/marcelo/restic/latest/"
+path="/test/marcelo/restic/latest/"
 
    
 if [ [$status==404] ] #talvez um ponto e virgula aqui
